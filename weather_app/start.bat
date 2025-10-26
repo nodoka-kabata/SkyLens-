@@ -1,64 +1,63 @@
 @echo off
+title ‚¨“V‹CŽæ“¾ƒc[ƒ‹ - ŠJ”­ƒT[ƒo[
 chcp 65001 > nul
 echo ========================================
-echo   ãŠå¤©æ°—å–å¾—ãƒ„ãƒ¼ãƒ« - èµ·å‹•ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+echo   ‚¨“V‹CŽæ“¾ƒc[ƒ‹ - ‹N“®ƒXƒNƒŠƒvƒg
 echo ========================================
 echo.
 
 cd /d "%~dp0"
 
-echo [1/3] ä»®æƒ³ç’°å¢ƒã®ç¢ºèª...
+echo [1/3] ‰¼‘zŠÂ‹«‚ÌŠm”F...
 if not exist "..\venv\Scripts\python.exe" (
     if not exist "..\.venv\Scripts\python.exe" (
-        echo ã‚¨ãƒ©ãƒ¼: ä»®æƒ³ç’°å¢ƒãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚
-        echo ç’°å¢ƒæ§‹ç¯‰ã‚’å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚
+        echo ƒGƒ‰[: ‰¼‘zŠÂ‹«‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB
+        echo ŠÂ‹«\’z‚ðŽÀs‚µ‚Ä‚­‚¾‚³‚¢B
         pause
         exit /b 1
     )
 )
 
-echo [2/3] OpenWeatherMap APIã‚­ãƒ¼ã®ç¢ºèª...
+echo [2/3] OpenWeatherMap APIƒL[‚ÌŠm”F...
 findstr /C:"OPENWEATHER_API_KEY=your_api_key_here" .env > nul
 if %errorlevel% equ 0 (
     echo.
-    echo â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
-    echo âš ï¸  è­¦å‘Š: APIã‚­ãƒ¼ãŒæœªè¨­å®šã§ã™
-    echo â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+    echo „ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
+    echo ??  Œx: APIƒL[‚ª–¢Ý’è‚Å‚·
+    echo „ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
     echo.
-    echo .envãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã„ã¦ã€OpenWeatherMap APIã‚­ãƒ¼ã‚’è¨­å®šã—ã¦ãã ã•ã„ã€‚
+    echo .envƒtƒ@ƒCƒ‹‚ðŠJ‚¢‚ÄAOpenWeatherMap APIƒL[‚ðÝ’è‚µ‚Ä‚­‚¾‚³‚¢B
     echo.
-    echo APIã‚­ãƒ¼ã®å–å¾—æ–¹æ³•:
+    echo APIƒL[‚ÌŽæ“¾•û–@:
     echo 1. https://home.openweathermap.org/users/sign_up
-    echo 2. ã‚¢ã‚«ã‚¦ãƒ³ãƒˆç™»éŒ²å¾Œã€APIã‚­ãƒ¼ã‚’å–å¾—
-    echo 3. .envãƒ•ã‚¡ã‚¤ãƒ«ã®OPENWEATHER_API_KEYã‚’æ›´æ–°
+    echo 2. ƒAƒJƒEƒ“ƒg“o˜^ŒãAAPIƒL[‚ðŽæ“¾
+    echo 3. .envƒtƒ@ƒCƒ‹‚ÌOPENWEATHER_API_KEY‚ðXV
     echo.
-    echo è¨­å®šå¾Œã€ã“ã®ãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«ã‚’å†åº¦å®Ÿè¡Œã—ã¦ãã ã•ã„ã€‚
+    echo Ý’èŒãA‚±‚Ìƒoƒbƒ`ƒtƒ@ƒCƒ‹‚ðÄ“xŽÀs‚µ‚Ä‚­‚¾‚³‚¢B
     echo.
     pause
     exit /b 1
 )
 
-echo [3/3] ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’èµ·å‹•ä¸­...
+echo [3/3] ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ð‹N“®’†...
 echo.
-echo â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
-echo ðŸŒ¤ï¸  ãŠå¤©æ°—å–å¾—ãƒ„ãƒ¼ãƒ« èµ·å‹•ä¸­...
-echo â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+echo „ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
+echo ??  ‚¨“V‹CŽæ“¾ƒc[ƒ‹ ‹N“®’†...
+echo „ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
 echo.
-echo ãƒ–ãƒ©ã‚¦ã‚¶ã§ä»¥ä¸‹ã®URLã«ã‚¢ã‚¯ã‚»ã‚¹ã—ã¦ãã ã•ã„:
-echo   http://localhost:5000
-echo.
-echo åœæ­¢ã™ã‚‹ã«ã¯ Ctrl+C ã‚’æŠ¼ã—ã¦ãã ã•ã„
-echo â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
+echo ƒT[ƒo[‹N“®Œã‚ÉŠù’è‚Ìƒuƒ‰ƒEƒU‚ðŽ©“®‚ÅŠJ‚«‚Ü‚·B
+echo ’âŽ~‚·‚é‚É‚Í Ctrl+C ‚ð‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢
+echo „ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª„ª
 echo.
 
-REM ä»®æƒ³ç’°å¢ƒã®Pythonãƒ‘ã‚¹ã‚’ç¢ºèª
+REM ‰¼‘zŠÂ‹«‚ÌPythonƒpƒX‚ðŠm”F
 if exist "..\.venv\Scripts\python.exe" (
     set PYTHON_PATH=..\.venv\Scripts\python.exe
 ) else (
     set PYTHON_PATH=..\venv\Scripts\python.exe
 )
 
-REM ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³èµ·å‹•
+REM ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‹N“®
 "%PYTHON_PATH%" app.py
 
 pause

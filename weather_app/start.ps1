@@ -1,4 +1,9 @@
-# お天気取得ツール - 起動スクリプト (PowerShell)
+﻿# お天気取得ツール - 起動スクリプト (PowerShell)
+
+# ウィンドウタイトルとUTF-8出力を設定（BOMなしUTF-8のメッセージが正しく表示されるように）
+$host.UI.RawUI.WindowTitle = "お天気取得ツール - 開発サーバー"
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+[Console]::InputEncoding  = [System.Text.UTF8Encoding]::new($false)
 
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "  お天気取得ツール - 起動スクリプト" -ForegroundColor Cyan
@@ -55,9 +60,7 @@ Write-Host "━━━━━━━━━━━━━━━━━━━━━━�
 Write-Host "🌤️  お天気取得ツール 起動中..." -ForegroundColor Green
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Green
 Write-Host ""
-Write-Host "ブラウザで以下のURLにアクセスしてください:" -ForegroundColor Cyan
-Write-Host "  http://localhost:5000" -ForegroundColor White
-Write-Host ""
+Write-Host "サーバー起動後に既定のブラウザを自動で開きます。" -ForegroundColor Cyan
 Write-Host "停止するには Ctrl+C を押してください" -ForegroundColor Yellow
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Green
 Write-Host ""

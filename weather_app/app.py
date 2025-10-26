@@ -8,6 +8,9 @@ from views.api import api_bp
 from config import config
 import os
 import logging
+import threading
+import webbrowser
+import time
 
 def create_app(config_name='default'):
     """アプリケーションファクトリー"""
@@ -65,4 +68,20 @@ if __name__ == '__main__':
     # 開発サーバー起動
     env = os.getenv('FLASK_ENV', 'development')
     app = create_app(env)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+
+    port = 5000
+
+    # デバッグリロードによる二重起動を避けつつ、起動後にブラウザを開く
+    if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
+        def _open_browser():
+            url = f"http://127.0.0.1:{port}"
+            # 少し待ってから開く（起動安定化）
+            time.sleep(1.0)
+            try:
+                webbrowser.open(url)
+            except Exception:
+                pass
+
+        threading.Thread(target=_open_browser, daemon=True).start()
+
+    app.run(debug=True, host='0.0.0.0', port=port)
