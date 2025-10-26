@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}お天気取得ツール{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🌤️ お天気取得ツール</h1>
+            <nav class="header__nav">
+                <a href="/" class="nav-link">ホーム</a>
+                <a href="/settings" class="nav-link">設定</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 お天気取得ツール - Powered by OpenWeatherMap API</p>
+        </div>
+    </footer>
+
+    <!-- 通知表示用 -->
+    <div id="notification-container"></div>
+
+    <script src="{{ url_for('static', filename='js/utils.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

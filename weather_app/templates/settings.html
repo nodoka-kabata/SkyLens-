@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}設定 - お天気取得ツール{% endblock %}
+
+{% block content %}
+<div class="settings-panel">
+    <h2>設定</h2>
+    
+    <div class="settings-section">
+        <h3>API設定</h3>
+        <div class="form-group">
+            <label for="api-key">OpenWeatherMap APIキー</label>
+            <input type="text" id="api-key" class="input" placeholder="APIキーを入力">
+            <p class="help-text">
+                APIキーは<a href="https://home.openweathermap.org/api_keys" target="_blank">こちら</a>から取得できます
+            </p>
+        </div>
+        <button id="save-api-key-btn" class="btn btn--primary">保存</button>
+    </div>
+    
+    <div class="settings-section">
+        <h3>地域管理</h3>
+        <div class="form-group">
+            <label for="location-name">地域名（英語）</label>
+            <input type="text" id="location-name" class="input" placeholder="Tokyo">
+        </div>
+        <div class="form-group">
+            <label for="location-name-jp">地域名（日本語）</label>
+            <input type="text" id="location-name-jp" class="input" placeholder="東京">
+        </div>
+        <button id="add-location-btn" class="btn btn--primary">地域を追加</button>
+        
+        <div class="location-management">
+            <h4>登録済み地域</h4>
+            <div id="location-management-list" class="location-management-list">
+                <!-- 地域リストはJavaScriptで動的に生成 -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="settings-section">
+        <h3>データ管理</h3>
+        <button id="clear-cache-btn" class="btn btn--danger">キャッシュをクリア</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+{% endblock %}

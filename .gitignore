@@ -1,0 +1,72 @@
+# ---- Python / Flask general ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Compiled extensions
+*.pyd
+*.pyo
+*.so
+*.dll
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+weather_app/venv/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+config.json
+weather_app/config.json
+
+# Databases (SQLite)
+*.db
+*.sqlite
+*.sqlite3
+instance/
+weather_app/instance/
+
+# Logs & runtime
+*.log
+logs/
+*.pid
+
+# Packaging / build artifacts
+build/
+dist/
+.eggs/
+*.egg-info/
+pip-wheel-metadata/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# Caches
+.cache/
+
+# Editors / IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Node (just in case)
+node_modules/

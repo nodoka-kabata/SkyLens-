@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}ホーム - お天気取得ツール{% endblock %}
+
+{% block content %}
+<div class="control-panel">
+    <div class="control-panel__section">
+        <h2>地域選択</h2>
+        
+        <!-- 地域検索 -->
+        <div class="location-search">
+            <div class="search-box">
+                <input type="text" id="location-search-input" class="input" placeholder="地域名を入力して検索（例: Yokohama, Kyoto, Paris）">
+                <button id="search-btn" class="btn btn--primary">🔍 検索</button>
+            </div>
+            <div id="search-results" class="search-results">
+                <!-- 検索結果はJavaScriptで動的に生成 -->
+            </div>
+        </div>
+        
+        <!-- 登録済み地域 -->
+        <div class="location-selector">
+            <h3 style="margin-top: 1rem; margin-bottom: 0.5rem;">登録済み地域</h3>
+            <div id="location-list" class="location-list">
+                <!-- 地域リストはJavaScriptで動的に生成 -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="control-panel__actions">
+        <button id="refresh-btn" class="btn btn--primary">
+            🔄 天気を更新
+        </button>
+        <button id="export-csv-btn" class="btn btn--secondary">
+            📥 CSV出力
+        </button>
+        <button id="export-json-btn" class="btn btn--secondary">
+            📥 JSON出力
+        </button>
+    </div>
+</div>
+
+<div class="weather-section">
+    <h2>明日の天気予報</h2>
+    
+    <div class="weather-controls">
+        <select id="sort-select" class="select">
+            <option value="name">地域名順</option>
+            <option value="temp_max">最高気温順</option>
+            <option value="temp_min">最低気温順</option>
+            <option value="precipitation">降水確率順</option>
+        </select>
+    </div>
+    
+    <div id="weather-cards" class="weather-cards">
+        <!-- 天気カードはJavaScriptで動的に生成 -->
+        <div class="loading">
+            <p>地域を選択して「天気を更新」ボタンをクリックしてください</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/weather.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
